@@ -79,7 +79,7 @@ void temperature(array<array<double, Nx>, Nx>& xpresent, array<array<double, Nx>
         }
     }
 
-    // case 1: periodic extremes, case 2: open extremes, else:
+    // case 1: periodic extremes, case 2: open extremes, else: fixed extremes
     switch (parameter)
     {   
         case 1:
@@ -91,6 +91,7 @@ void temperature(array<array<double, Nx>, Nx>& xpresent, array<array<double, Nx>
             xfuture[Nx - 1][i] = xfuture[1][i];
         }
         return;
+
         case 2:
         for (int i = 0; i < Nx; i++)
         {
@@ -100,6 +101,7 @@ void temperature(array<array<double, Nx>, Nx>& xpresent, array<array<double, Nx>
             xfuture[Nx - 1][i] = xfuture[Nx - 2][i];
         }
         return;
+
         default:
         return;
     }   
